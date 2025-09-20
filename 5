@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    unsigned long long n;
+    cin >> n;
+
+    unsigned long long perfect[] = {
+        6ULL, 28ULL, 496ULL, 8128ULL,
+        33550336ULL, 8589869056ULL,
+        137438691328ULL, 2305843008139952128ULL
+    };
+
+    for (int i = 0; i < 8; i++) {
+        if (n == perfect[i]) {
+            cout << "YES";
+            return 0;
+        }
+    }
+    cout << "NO";
+}
