@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+bool dep(int n) {
+    int m = n, dao = 0, sum = 0, co6 = 0;
+    while (m > 0) {
+        int d = m % 10;
+        if (d == 6) co6 = 1;
+        sum += d;
+        dao = dao * 10 + d;
+        m /= 10;
+    }
+    return (dao == n && co6 && sum % 10 == 8);
+}
+int main() {
+    int a, b; cin >> a >> b;
+    for (int i = a; i <= b; i++)
+        if (dep(i)) cout << i << " ";
+}
+
